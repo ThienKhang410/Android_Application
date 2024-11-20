@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import com.example.lab5_web.User;
-
 import java.util.ArrayList;
 import java.util.List;
 
