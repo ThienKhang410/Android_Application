@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+
 }
 
 android {
@@ -18,7 +19,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -40,4 +42,13 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(platform(libs.firebase.bom))
+    implementation(platform(libs.firebase.bom)) // Đảm bảo sử dụng đúng alias từ libs.versions.toml
+    implementation(libs.firebase.database)     // Thêm các thư viện Firebase khác (nếu cần)
+    implementation(libs.firebase.auth)         // Ví dụ: Firebase Authentication
+    implementation("com.google.firebase:firebase-database:20.2.2")
+
 }
+
+apply(plugin = "com.google.gms.google-services")
+

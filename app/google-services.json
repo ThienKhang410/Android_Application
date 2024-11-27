@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "119787199514",
+    "firebase_url": "https://android-app-64fd1-default-rtdb.firebaseio.com",
+    "project_id": "android-app-64fd1",
+    "storage_bucket": "android-app-64fd1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119787199514:android:8f813439abc90a67e5c5a3",
+        "android_client_info": {
+          "package_name": "com.example.lab5_web"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1fyqmwJizCcdMZLT4vMDdUW3o9AZe8mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
