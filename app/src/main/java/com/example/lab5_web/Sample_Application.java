@@ -28,7 +28,7 @@ public class Sample_Application extends AppCompatActivity {
         Intent intent = getIntent();
         String username = intent.getStringExtra("USERNAME");
         if(username != null && !username.isEmpty()){
-            sappContent.setText("Hello" + username);
+            sappContent.setText("Hello " + username);
 
         }else{
             sappContent.setText("Hello user");

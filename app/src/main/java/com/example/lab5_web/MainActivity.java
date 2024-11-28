@@ -85,6 +85,7 @@
 
 package com.example.lab5_web;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private EditText edtUsername, edtPassword;
     private Button btnLogin;
-
+    private Button btnRegister;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         edtUsername = findViewById(R.id.login_username);
         edtPassword = findViewById(R.id.login_password);
         btnLogin = findViewById(R.id.btn_login);
-
+        btnRegister = findViewById(R.id.btn_register);
         // Xử lý khi nhấn nút Login
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,6 +132,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Register.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void checkLogin(String username, String password) {
@@ -150,7 +159,11 @@ public class MainActivity extends AppCompatActivity {
 
                         if (isValid) {
                             Toast.makeText(MainActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
-                            // Chuyển sang Activity khác nếu cần
+                            // Chuyển đến giao diện SampleApplicationActivity
+                            Intent intent = new Intent(MainActivity.this, Sample_Application.class);
+                            intent.putExtra("USERNAME", username);
+                            startActivity(intent);
+                            finish(); // Kết thúc MainActivity nếu không cần quay lại
                         } else {
                             Toast.makeText(MainActivity.this, "Invalid username or password!", Toast.LENGTH_SHORT).show();
                         }
